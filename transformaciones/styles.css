@@ -1,0 +1,121 @@
+/*ejemplo 2 propiedad  transform y skew*/
+
+ /*
+    COLOURS ->
+        AZUL CIELO -> 009CDE
+        zaul oscuro -> 02648e
+        blanco -> fff
+        gris -> #8ca3ad
+        --------------------
+    STYLES GUIDE
+        0. RESET
+        1. NAVS
+        2. TRANSITIONS
+        3. SKEW
+    */
+/*---------------0.RESET-------------------*/
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body {
+    font:300 16px/1 'arial';
+}
+li,ul,div {
+    padding: 0;
+}
+/*---------------1.NAVS-------------------*/
+
+.navbar {
+    background: #009cde;
+    margin-bottom: 30px;
+}
+.navbar ul {
+    display: flex;
+    justify-content: space-between; 
+    height: 60px; 
+    
+}
+.navbar li{ 
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #fff;
+}
+.navbar a {
+    position: relative;
+    display: block;
+    color: #fff; 
+    text-decoration:none ; 
+    text-align: center;
+    font-size: 20px;
+}
+.navbar li.active:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    height: 5px;
+    width: 80%;
+    background: #02648e;
+}
+.subnavbar {
+    display: none;
+    background: #02648e;
+    left: 0;
+    position: absolute;
+    top: 61px;
+    width: 100%;
+}
+.subnavbar a {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 40px;
+    padding-right: 10px;
+    border-bottom: 1px solid #fff;
+    font-size: 16px;
+}
+.subnavbar .active:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 5px;
+    background: #009cde;
+}
+.navbar li:hover .subnavbar {
+    display: block;
+}
+.subnavbar__hover:hover {
+    background: hsl(200,100%,70%);
+}
+/*---------------2.TRANSITION-------------------*/
+.navbar a {
+    transition: .3s all;
+}
+.navbar a:hover {
+    transform: translate(0, 5px);
+}
+/*---------------3. SKEW-------------------*/
+
+.btn {
+    width: 100px;
+    height: 50px;
+    background: gray;
+    margin: auto;
+    border: 1px solid red;
+    text-align: center;
+    line-height: 3;
+    color: #fff;
+    transition: .3s all;
+}
+.btn:hover {
+    transform: skew(-50deg,25deg);
+}
+

@@ -1,0 +1,101 @@
+/*ejemplo 4 menu responsive*/
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+.navbar { 
+    display: flex;
+    justify-content: space-between; 
+    height: 60px; 
+    background-color: #009cde;
+    margin-bottom: 30px;
+}
+.navbar a {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; 
+    text-decoration:none ; 
+    border-right: 2px solid #fff;
+    font: 16px 'arial';
+}
+.navbar a.active:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    height: 5px;
+    width: 80%;
+    background: #02648e;
+}
+.type2 {
+    background: #02648e;
+}
+.type2 a.active:after {
+    content: "";
+    background: #009cde;
+}
+.type3 {
+    background: #fff;
+    border-bottom: 5px solid #02648e;
+}
+.type3 a {
+    color: #000;
+}
+.type3 a.active:after {
+    content: "";
+    background: #009cde;
+     bottom: -5px;
+}
+.type4 {
+    background: transparent;
+}
+.type4 a {
+    background: #02648e;
+    border-right-width: 35px;
+
+}
+.type4 a.active {
+    background: #009cde;
+    overflow: hidden;
+}
+.type4 a.active:after {
+    content: "";
+    background: #02648e;
+    width: 30px;
+    height: 30px;
+    top: -15px;
+    right: -15px;
+    bottom: auto;
+    left: auto;
+    transform: rotate(45deg);
+}
+/* MEDIAQUERY */
+@media screen and (max-width: 768px) {
+    .navbar a.active:after {
+        content: "";
+        width: 100%;
+        left: 0;
+    }
+    .type4 a.active:after {
+        width: 30px;
+        left: auto;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .navbar {
+        display: block;
+        height: auto;
+    }
+    .navbar a {
+        /* display: block; */
+        height: 60px;
+        border-bottom: 2px solid #fff;
+
+    }
+}
+

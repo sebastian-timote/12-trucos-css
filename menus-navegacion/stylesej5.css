@@ -1,0 +1,122 @@
+/*ejemplo 5 menu desplegable responsive
+ - nohay hover en dispositivos moviles*/
+ /*
+    COLOURS ->
+        AZUL CIELO -> 009CDE
+        zaul oscuro -> 02648e
+        blanco -> fff
+        gris -> #8ca3ad
+        --------------------
+    STYLES GUIDE
+        0. RESET
+        1. NAVS
+        2. MEDIAQUERY
+    */
+/*---------------RESET-------------------*/
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body {
+    font:300 16px/1 'arial';
+    padding: 0;
+    margin: 0;
+}
+li,ul {
+    padding: 0;
+}
+/*---------------NAVS-------------------*/
+.navbar {
+    background: #009cde;
+    margin-bottom: 30px;
+}
+.navbar ul {
+    display: flex;
+    justify-content: space-between; 
+    height: 60px; 
+}
+.navbar li{ 
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #fff;
+}
+.navbar a {
+    position: relative;
+    display: block;
+    color: #fff; 
+    text-decoration:none ; 
+    text-align: center;
+    font-size: 20px;
+}
+.navbar li.active:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    height: 5px;
+    width: 80%;
+    background: #02648e;
+}
+.subnavbar {
+    display: none;
+    background: #8ca3ad;
+    left: 0;
+    position: absolute;
+    top: 61px;
+    width: 100%;
+}
+.subnavbar a {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 40px;
+    padding-right: 10px;
+    border-bottom: 1px solid #fff;
+    font-size: 16px;
+}
+.subnavbar .active:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 5px;
+    background: #009cde
+    ;
+}
+.navbar li:hover .subnavbar {
+    display: block;
+}
+
+/*---------------MEDIAQUERY-------------------*/
+@media screen and (max-width: 768px) {
+    .subnavbar {
+        display: block;
+    }
+}
+@media screen and (max-width: 600px) {
+    
+}
+@media screen and (max-width: 540px) {
+    .navbar a {
+        font-size: 14px;
+    }
+    .subnavbar {
+        padding-left: 5px;
+    }
+    .navbar li {
+        position: static;
+        bottom: 50px;
+    }
+    .navbar ul {
+        position: relative;
+    }
+}
+@media screen and (max-width: 360px) {
+    
+}
+
